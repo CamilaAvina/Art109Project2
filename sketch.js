@@ -14,6 +14,7 @@ function setup() {
 function draw(){
   background(0);
   text('tap here to play', 10, 20);
+  console.log('hello');
 }
 
 function canvasPressed() {
