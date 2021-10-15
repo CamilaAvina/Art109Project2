@@ -1,14 +1,18 @@
-p5.SoundFile example 0
+//p5.SoundFile example 0
 let mySound;
 function preload() {
   soundFormats('mp3', 'ogg');
-  mySound = loadSound('assets/doorbell');
+  mySound = loadSound('asset/register.mp3');
 }
 
 function setup() {
   let cnv = createCanvas(100, 100);
   cnv.mousePressed(canvasPressed);
-  background(220);
+  }
+
+
+function draw(){
+  background(0);
   text('tap here to play', 10, 20);
 }
 
