@@ -9,24 +9,53 @@
 
      <link rel="stylesheet" href="style.css">
      <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
-    <script>
-      function init() {
-        var stage = new createjs.Stage("demoCanvas");
-        var circle = new createjs.Shape();
-        circle.graphics.beginFill("DeepSkyBlue").drawCircle(0, 0, 50);
-        circle.x = 100;
-        circle.y = 100;
-        stage.addChild(circle);
-        stage.update();
-      }
-    </script>
+     <!--example from https://createjs.com/tutorials/Mouse%20Interaction/ dran and drop-->
+     <script src="https://code.createjs.com/easeljs-0.8.2.min.js"></script>
 
+     	<script type="text/javascript">
+
+       	var stage, output;
+
+     		function init() {
+     			stage = new createjs.Stage("demoCanvas");
+
+     			// For mobile devices.
+     			createjs.Touch.enable(stage);
+
+     			// this lets our drag continue to track the mouse even when it leaves the canvas:
+     			// play with commenting this out to see the difference.
+     			stage.mouseMoveOutside = true;
+
+     			var circle = new createjs.Shape();
+     			circle.graphics.beginFill("#6ACCBC").drawCircle(0, 0, 50);
+
+     			var label = new createjs.Text("buy me", "bold 14px Arial", "#FFFFFF");
+     			label.textAlign = "center";
+     			label.y = -7;
+
+     			var dragger = new createjs.Container();
+     			dragger.x = dragger.y = 100;
+     			dragger.addChild(circle, label);
+     			stage.addChild(dragger);
+
+     			dragger.on("pressmove",function(evt) {
+     				// currentTarget will be the container that the event listener was added to:
+     				evt.currentTarget.x = evt.stageX;
+     				evt.currentTarget.y = evt.stageY;
+     				// make sure to redraw the stage to show the change:
+     				stage.update();
+     			});
+
+     			stage.update();
+     		}
+
+</script>
   </head>
   <body onload="init();">
 <h1>Emotions </h1>
 
 
- <canvas id="demoCanvas" width="500" height="200"></canvas>
+ <canvas id="demoCanvas" width="2000" height="500"></canvas>
 
 
 
