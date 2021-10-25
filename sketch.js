@@ -1,5 +1,5 @@
 //p5.SoundFile example 0
-//preload example from https://p5js.org/reference/#/p5.SoundFile to be familiar to how to add sound
+//preload example from https://p5js.org/reference/#/p5.SoundFile to be familiar to how to add soun
 let mySound;
 function preload() {
   soundFormats('mp3', 'ogg');
@@ -7,14 +7,15 @@ function preload() {
 }
 
 function setup() {
-  let cnv = createCanvas(100, 100);
+  let cnv = createCanvas(150, 50);
   cnv.mousePressed(canvasPressed);
   }
 
 
 function draw(){
-  background(200,200);
-  text('tap here to pay', 20, 10);
+  background(125, 206, 160);
+  textSize(16);
+  text('tap here to pay', 10, 20);
 
 }
 
