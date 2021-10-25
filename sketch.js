@@ -14,7 +14,7 @@ function setup() {
 
 function draw(){
   background(200,200);
-  text('tap here to pay', 10, 20);
+  text('tap here to pay', 20, 10);
 
 }
 
